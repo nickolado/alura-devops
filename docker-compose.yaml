@@ -1,0 +1,16 @@
+services:
+  alura-imersao:
+      build: .
+      container_name: alura
+      ports:
+        - "8000:8000"
+      volumes:
+        - .:/app
+      environment:
+        - PYTHONUNBUFFERED=1
+      networks:
+        - alura-network
+networks:
+  alura-network:
+    driver: bridge
+
